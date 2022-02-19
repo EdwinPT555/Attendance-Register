@@ -1,0 +1,26 @@
+.loginContainer {
+  width: 100vw;
+  height: 100vh;
+  background: {
+    color: black;
+    image: linear-gradient(rgba(0, 0, 0, 0.534), rgba(0, 0, 0, 0.63)),
+      url(https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
+    repeat: no-repeat;
+    position: center;
+    size: cover;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .loginPaper {
+    padding: 25px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+.link {
+  text-decoration: none;
+}
