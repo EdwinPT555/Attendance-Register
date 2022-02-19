@@ -6,12 +6,13 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Link, useNavigate } from "react-router-dom";
-import styles from '../../App.module.scss';
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import styles from "../../App.module.scss";
 
 const TopNavigationDefault = () => {
   const navigate = useNavigate();
-
+  const location = useLocation();
+  
   const onClick = React.useCallback(() => {
     navigate("/login");
   }, [navigate]);
@@ -30,9 +31,15 @@ const TopNavigationDefault = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Link to="/" className={styles.link}>GI Register</Link>
+            <Link to="/" className={styles.link}>
+              GI Register
+            </Link>
           </Typography>
-          <Button onClick={onClick} color="inherit">
+          <Button
+            onClick={onClick}
+            color="inherit"
+            disabled={location.pathname === "/login"}
+          >
             Login
           </Button>
         </Toolbar>
